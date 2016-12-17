@@ -1,7 +1,7 @@
 -- @Author: krocki
 -- @Date:   2016-12-16 18:29:38
 -- @Last Modified by:   krocki
--- @Last Modified time: 2016-12-16 20:07:58
+-- @Last Modified time: 2016-12-16 20:08:51
 
 import System.Random
 import Data.List
@@ -21,7 +21,7 @@ randomList (n, min, max) gen = take n (randomRs (min,max) gen)
 -- all elements >= x to the right and process left and right
 -- recursively until []
 
-quicksort:: (Ord a) => [a] -> [a]
+quicksort :: (Ord a) => [a] -> [a]
 quicksort [] = []
 quicksort (x:xs) = quicksort left  ++ [x] ++ quicksort right
                    where left = [e | e <- xs, e < x]
