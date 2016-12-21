@@ -2,7 +2,7 @@
 * @Author: krocki
 * @Date:   2016-12-20 12:07:44
 * @Last Modified by:   krocki
-* @Last Modified time: 2016-12-20 19:09:47
+* @Last Modified time: 2016-12-20 19:10:45
 */
 
 #include <stdio.h>
@@ -12,7 +12,7 @@
 
 typedef struct node {
 
-	int val; 
+	int val;
 	struct node* next;
 
 } node;
@@ -35,10 +35,10 @@ void append(node** head, TYPE elem) {
 void prepend(node** head, TYPE elem) {
 
 	node* new_head = (node*) malloc(sizeof(node));
-	
+
 	new_head->next = (*head);
 	new_head->val = elem;
-	
+
 	(*head) = new_head;
 
 }
@@ -87,27 +87,27 @@ void insert(node* head, node* address, TYPE elem) {
 
 int main() {
 
-    node* head = NULL;
+	node* head = NULL;
 
-    append(&head, 0);
-    append(&head, 1);
-    append(&head, 2);
-    append(&head, 3);
+	append(&head, 0);
+	append(&head, 1);
+	append(&head, 2);
+	append(&head, 3);
 
-    traverse(head);
+	traverse(head);
 
-    printf("Find 1: %p\n", find(head, 1));
-    printf("Find 2: %p\n", find(head, 2));
-    printf("Find 4: %p\n", find(head, 4));
+	printf("Find 1: %p\n", find(head, 1));
+	printf("Find 2: %p\n", find(head, 2));
+	printf("Find 4: %p\n", find(head, 4));
 
-    prepend(&head, 4);
+	prepend(&head, 4);
 
-    traverse(head);
-    printf("Find 4: %p\n", find(head, 4));
+	traverse(head);
+	printf("Find 4: %p\n", find(head, 4));
 
-    //insert '5' after '2'
-    insert(head, find(head, 2), 5);
-    traverse(head);
+	//insert '5' after '2'
+	insert(head, find(head, 2), 5);
+	traverse(head);
 
 
 }
