@@ -2,10 +2,12 @@
 * @Author: krocki
 * @Date:   2016-12-30 22:25:25
 * @Last Modified by:   krocki
-* @Last Modified time: 2016-12-31 12:19:39
+* @Last Modified time: 2016-12-31 12:22:16
 */
 
 #include <stdio.h>
+
+// http://stackoverflow.com/questions/21923791/how-to-get-absolute-value-of-a-number-in-java-using-bit-manipulation
 
 int absolute(int n) {
 
