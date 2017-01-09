@@ -1,7 +1,7 @@
 -- @Author: krocki
 -- @Date:   2017-01-09 10:50:43
 -- @Last Modified by:   krocki
--- @Last Modified time: 2017-01-09 11:26:15
+-- @Last Modified time: 2017-01-09 12:10:30
 
 data Tree = NULL | Node Int Tree Tree deriving (Eq, Show)
 
@@ -20,7 +20,7 @@ dfs k (Node v l r) = if v == k then [[v]] else
 --        / \
 --       9  10
 --      /
---     11 (2 elements "11" on purpose)
+--     11 (Two "11"s on purpose)
 
 main = do
     let root = Node 0 (Node 1 (Node 3 NULL NULL) (Node 4 (Node 5 NULL NULL) (Node 6 (Node 7 NULL NULL) (Node 8 (Node 9 (Node 11 NULL NULL) NULL) (Node 10 NULL NULL))))) (Node 2 NULL (Node 11 NULL NULL))
