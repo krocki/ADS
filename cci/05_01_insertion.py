@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2017-01-13 19:42:32
 # @Last Modified by:   krocki
-# @Last Modified time: 2017-01-13 20:30:56
+# @Last Modified time: 2017-01-14 11:59:39
 
 # you are given two 32-bit numbers, N and M, and
 # two bit positions, i and j. Write a method to
@@ -27,6 +27,15 @@
 N = 1024
 M = 19
 
-N = (M << 2) | N
+#TODO: clear the bits j to i in N
+
+i = 2
+j = 6
+ones = ~0
+leftmask = (ones << j+1) & M
+rightmask = (ones >> i) & M
+M = M & (leftmask | rightmask)
+print "{0:b}".format(ones)
+N = (M << i) | N
 
 print "{0:b}".format(N)
