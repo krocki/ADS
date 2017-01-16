@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <iostream>
-#include <vector>
+#include <map>
 
 void print_array(int arr[][5], int n, int k) {
 
@@ -29,23 +29,26 @@ void print_array(int arr[][5], int n, int k) {
 // solution with rotating layers
 void zero_matrix(int arr[][5], int n, int k) {
 
-	std::vector<int> zero_rows;
-	std::vector<int> zero_cols;
+	//might be better to implement this as a hash map
+	std::map<int, bool> zero_rows;
+	std::map<int, bool> zero_cols;
 
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < k; j++)
 			if (arr[i][j] == 0) {
-				zero_rows.push_back(i);
-				zero_cols.push_back(j);
+				zero_rows[i] = true;
+				zero_cols[j] = true;
 			}
 
-	for (int i = 0; i < zero_rows.size(); i++)
+	for (int i = 0; i < n; i++)
 		for (int j = 0; j < k; j++)
-			arr[zero_rows[i]][j] = 0;
+			if (zero_rows[i])
+				arr[i][j] = 0;
 
-	for (int i = 0; i < zero_cols.size(); i++)
-		for (int j = 0; j < n; j++)
-			arr[j][zero_cols[i]] = 0;
+	for (int j = 0; j < k; j++)
+		for (int i = 0; i < n; i++)
+			if (zero_cols[i])
+				arr[j][i] = 0;
 
 }
 
