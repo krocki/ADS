@@ -2,7 +2,7 @@
 * @Author: krocki
 * @Date:   2017-01-15 15:09:06
 * @Last Modified by:   krocki
-* @Last Modified time: 2017-01-15 15:20:05
+* @Last Modified time: 2017-01-15 15:24:50
 */
 
 #include <stdio.h>
@@ -46,6 +46,7 @@ void urlify(char* arr, int len) {
 	}
 
 }
+
 int main() {
 
 	char array[] = "abc string zyx    ";

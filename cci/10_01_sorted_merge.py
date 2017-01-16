@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2017-01-13 19:47:53
 # @Last Modified by:   krocki
-# @Last Modified time: 2017-01-13 20:58:12
+# @Last Modified time: 2017-01-13 22:11:01
 
 # You are given two sorted arrays, A and B, where
 # A has a large enough buffer at the end to hold
@@ -11,6 +11,9 @@
 
 A = [4,4,1,7,2,3442,234,541,-234]
 B = [-23,5,7,8,1,2,3]
+
+# TODO: insert into A without extra space
+#		merge backwards into the end of A
 
 def merge(a,b):
 
