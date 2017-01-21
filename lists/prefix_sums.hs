@@ -10,7 +10,7 @@ import Data.List
 -- for i=1:1:N : sum[i] = sum[i-1] + x[i]
 -- example: prefix_sums [1,2,3,4,5,6,7,8] = [1,3,6,10,15,21,28,36]
 
--- naive, O(N)
+-- simple
 prefix_sums :: [Int] -> [Int]
 prefix_sums [] = []
 prefix_sums xs = prefix_sums a ++ [e + (sum a)]
@@ -21,7 +21,7 @@ pairs :: [Int] -> [[Int]]
 pairs [] = []
 pairs (x:y:xs) = [x,y]:(pairs xs)
 
--- more complex recursive solution, O(logN)
+-- more complex recursive solution
 cumsum :: [Int] -> [Int]
 cumsum (q:[]) = [q]
 cumsum (p:q:[]) = [p, p+q]
