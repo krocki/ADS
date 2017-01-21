@@ -21,7 +21,7 @@ pairs :: [Int] -> [[Int]]
 pairs [] = []
 pairs (x:y:xs) = [x,y]:(pairs xs)
 
--- more complex recursive solution
+-- more complex recursive map-reduce solution
 cumsum :: [Int] -> [Int]
 cumsum (q:[]) = [q]
 cumsum (p:q:[]) = [p, p+q]
