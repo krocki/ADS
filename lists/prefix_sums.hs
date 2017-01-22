@@ -1,7 +1,7 @@
 -- @Author: krocki
--- @Date:   2017-01-20 17:51:32
+-- @Date:   2017-01-20 16:55:32
 -- @Last Modified by:   krocki
--- @Last Modified time: 2017-01-21 17:10:38
+-- @Last Modified time: 2017-01-21 17:11:31
 
 import Data.List
 
