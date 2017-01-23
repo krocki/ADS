@@ -2,7 +2,7 @@
 # @Author: krocki
 # @Date:   2017-01-22 15:50:46
 # @Last Modified by:   krocki
-# @Last Modified time: 2017-01-22 16:07:08
+# @Last Modified time: 2017-01-22 19:15:46
 
 # Given a list of day stock prices (integers for
 # simplicity), find the maximum single sell
@@ -16,23 +16,21 @@
 
 def max_profit(d):
 
-	b = buy = d[0];
-	s = sell = d[1];
-	best_profit = sell - buy
+	if len(d) < 2:
+	    raise IndexError('len < 2')
 
-	for i in range(1, len(d)):
-		current_profit = d[i] - buy
-		
-		if current_profit > best_profit:
-			best_profit = current_profit
-			sell = d[i]
-			b = buy
-			s = sell
+	best_profit = d[1] - d[0]
+	buy = d[0]
 
-		if d[i] < buy:
-			buy = d[i]
+	for i, price in enumerate(d):
+		if i == 0:
+		    continue
 
-	return b, s, best_profit
+		current_profit = price - buy
+		best_profit = max(current_profit, best_profit)
+		buy = min(buy, price)
+
+	return best_profit
 
 
 x = [21, 12, 11, 9, 6, 3]
@@ -40,3 +38,4 @@ y = [8, 5, 12, 9, 19, 1]
 
 print max_profit(x)
 print max_profit(y)
+
