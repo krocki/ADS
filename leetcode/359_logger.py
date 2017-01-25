@@ -6,13 +6,12 @@
 
 class Logger(object):
 
-	d = {}
-	
 	def __init__(self):
 		"""
 		Initialize your data structure here.
 		"""
-		
+		self.d = {}
+
 	def shouldPrintMessage(self, timestamp, message):
 		"""
 		Returns true if the message should be printed in the given timestamp, otherwise returns false.
@@ -23,10 +22,10 @@ class Logger(object):
 		:rtype: bool
 		"""
 		k = self.d.get(message)
-		
+
 		print message
 
-		if k:
+		if k != None:
 			print self.d[message]
 			if self.d[message] + 10 <= timestamp:
 				self.d[message] = timestamp
@@ -35,8 +34,10 @@ class Logger(object):
 				return False
 		
 		else:
+			print "not found"
 			self.d[message] = timestamp 
 			return True
+
 
 
 # Your Logger object will be instantiated and called as such:
