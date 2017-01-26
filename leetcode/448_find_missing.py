@@ -2,7 +2,7 @@
 # @Author: Kamil M Rocki
 # @Date:   2017-01-25 18:08:05
 # @Last Modified by:   Kamil M Rocki
-# @Last Modified time: 2017-01-25 18:21:52
+# @Last Modified time: 2017-01-25 18:22:55
 
 def findDisappearedNumbers(nums):
 	"""
@@ -14,8 +14,6 @@ def findDisappearedNumbers(nums):
 	for i,x in enumerate(nums):
 		idx = abs(x)
 		nums[idx-1] = abs(nums[idx-1]) * (-1)
-
-	print nums
 
 	for i,x in enumerate(nums):
 		if x > 0: missing.append(i+1)
